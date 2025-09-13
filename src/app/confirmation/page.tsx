@@ -107,7 +107,7 @@ export default function ConfirmationPage() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-xl text-gray-600 max-w-2xl mx-auto"
             >
-              Your makeup session has been successfully booked. We'll send you a confirmation email shortly.
+              Your makeup session has been successfully booked. We&apos;ll send you a confirmation email shortly.
             </motion.p>
           </motion.div>
 
@@ -274,7 +274,7 @@ export default function ConfirmationPage() {
                   <EnvelopeIcon className="w-6 h-6 text-blue-600" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-2">Confirmation Email</h4>
-                <p className="text-gray-600 text-sm">You'll receive a detailed confirmation email within 5 minutes.</p>
+                <p className="text-gray-600 text-sm">You&apos;ll receive a detailed confirmation email within 5 minutes.</p>
               </div>
               
               <div className="text-center">
