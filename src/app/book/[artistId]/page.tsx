@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useParams, useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
@@ -20,7 +20,7 @@ import { categories } from '@/data/categories';
 import { useBooking } from '@/context/BookingContext';
 import { BookingFormData } from '@/types';
 
-export default function BookingPage() {
+function BookingContent() {
   const params = useParams();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -433,5 +433,20 @@ export default function BookingPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function BookingPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading booking form...</p>
+        </div>
+      </div>
+    }>
+      <BookingContent />
+    </Suspense>
   );
 }
